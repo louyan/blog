@@ -53,6 +53,18 @@
     </item>
     
     <item>
+<<<<<<< HEAD
+=======
+      <title>使用Hugo搭建静态个人博客</title>
+      <link>https://yannotes.cn/post/how-new-hugo-blog/</link>
+      <pubDate>Sat, 19 Jan 2019 04:40:54 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/post/how-new-hugo-blog/</guid>
+      <description>&lt;p&gt;使用Hugo搭建静态个人博客,源码和网站内容分开。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+>>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
       <title>简历</title>
       <link>https://yannotes.cn/resume/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>使用Hugo搭建静态个人博客</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  
+  
+
+  
+
+  
+  <meta name="author" content="louyan">
+  <meta name="description" content="使用Hugo搭建静态个人博客,源码和网站内容分开。
+">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="使用Hugo搭建静态个人博客">
+    <meta name="twitter:description" content="使用Hugo搭建静态个人博客,源码和网站内容分开。
+">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使用Hugo搭建静态个人博客">
+  <meta property="og:description" content="使用Hugo搭建静态个人博客,源码和网站内容分开。
+">
+  <meta property="og:url" content="https://yannotes.cn/post/how-new-hugo-blog/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.53">
+
+
+<link rel="canonical" href="https://yannotes.cn/post/how-new-hugo-blog/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="YAN的札记">
+<meta name="msapplication-tooltip" content="YAN的札记">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://yannotes.cn/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yannotes.cn/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yannotes.cn/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://yannotes.cn/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://yannotes.cn/icons/icon-152x152.png">
+<link rel="manifest" href="https://yannotes.cn/manifest.json">
+
+
+<link rel="preload" href="https://yannotes.cn/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://yannotes.cn/images/avatar.png" as="image">
+<link rel="preload" href="https://yannotes.cn/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://yannotes.cn/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://yannotes.cn/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">YAN的札记</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://yannotes.cn/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/archives">归档</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/about/">关于</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/links/">友链</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:liuyancj@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/louyan" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="https://yannotes.cn/images/qrcode.jpg" title="Wechat" aria-label="Wechat">
+            <span class="icon icon-wechat" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin" aria-label="Linkedin">
+            <span class="icon icon-linkedin" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">使用Hugo搭建静态个人博客</h1>
+      <p class="post-meta">@louyan · Jan 19, 2019 · 1 min read</p>
+    </header>
+    <article class="post-content"><p>使用Hugo搭建静态个人博客,源码和网站内容分开。</p>
+
+<h3 id="从您的-gh-pages-分支部署项目页面-https-gohugo-io-hosting-and-deployment-hosting-on-github-deployment-of-project-pages-from-your-gh-pages-branch">从您的<code>gh-pages</code>分支部署项目页面<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch"> </a></h3>
+
+<p>您还可以告诉GitHub页面将您的<code>master</code>分支视为已发布的站点或指向单独的<code>gh-pages</code>分支。后一种方法有点复杂但有一些优点：</p>
+
+<ul>
+<li>它将您的源和生成的网站保存在不同的分支中，因此维护两者的版本控制历史记录。</li>
+<li>与前面的<code>docs/</code>选项不同，它使用默认<code>public</code>文件夹。</li>
+</ul>
+
+<h4 id="gh-pages-分支机构的筹备工作-https-gohugo-io-hosting-and-deployment-hosting-on-github-preparations-for-gh-pages-branch"><code>gh-pages</code>分支机构的筹备工作<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#preparations-for-gh-pages-branch"> </a></h4>
+
+<p>这些步骤只需要完成一次。替换<code>upstream</code>为遥控器的名称; 例如<code>origin</code>：</p>
+
+<h5 id="添加-public-文件夹">添加<code>public</code>文件夹</h5>
+
+<p>首先，将<code>public</code>文件夹添加到<code>.gitignore</code>项目根目录下的文件中，以便在主分支上忽略该目录：</p>
+
+<pre><code>echo &quot;public&quot; &gt;&gt; .gitignore
+</code></pre>
+
+<h5 id="初始化您的-gh-pages-分支">初始化您的<code>gh-pages</code>分支</h5>
+
+<p>您现在可以将<code>gh-pages</code>分支初始化为空的<a href="https://git-scm.com/docs/git-checkout/#git-checkout---orphanltnewbranchgt">孤立分支</a>：</p>
+
+<pre><code>git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &quot;Initializing gh-pages branch&quot;
+git push upstream gh-pages
+git checkout master
+</code></pre>
+
+<h4 id="构建和部署-https-gohugo-io-hosting-and-deployment-hosting-on-github-build-and-deployment">构建和部署<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-and-deployment"> </a></h4>
+
+<p>现在使用git的<a href="https://git-scm.com/docs/git-worktree">worktree功能</a>将<code>gh-pages</code>分支检入您的<code>public</code>文件夹。本质上，worktree允许您在不同的目录中检出同一本地存储库的多个分支：</p>
+
+<pre><code>rm -rf public
+git worktree add -B gh-pages public upstream/gh-pages
+</code></pre>
+
+<p>使用该<code>hugo</code>命令重新生成站点并在<code>gh-pages</code>分支上提交生成的文件：</p>
+
+<p>commit-gh-pages-files.sh</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">hugo
+cd public <span style="color:#f92672">&amp;&amp;</span> git add --all <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;Publishing to gh-pages&#34;</span> <span style="color:#f92672">&amp;&amp;</span> cd ..</code></pre></div>
+<p>如果本地<code>gh-pages</code>分支中的更改看起来没问题，请将它们推送到远程仓库：</p>
+
+<pre><code>git push upstream gh-pages
+</code></pre>
+
+<h5 id="设为-gh-pages-您的发布分支">设为<code>gh-pages</code>您的发布分支</h5>
+
+<p>要将<code>gh-pages</code>分支用作发布分支，您需要在GitHub UI中配置存储库。一旦GitHub意识到你已经创建了这个分支，这可能会自动发生。您也可以在GitHub项目中手动设置分支：</p>
+
+<ol>
+<li>转到<strong>设置</strong> → <strong>GitHub页面</strong></li>
+<li>从<strong>Source中</strong>，选择“gh-pages branch”，然后选择<strong>Save</strong>。如果未启用该选项，您可能尚未创建分支，或者您尚未将分支从本地计算机推送到GitHub上的托管存储库。</li>
+</ol>
+
+<p>片刻之后，您将在GitHub页面上看到更新的内容。</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://yannotes.cn/tags/hugo"><span class="tag">Hugo</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 YAN的札记</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://yannotes.cn/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

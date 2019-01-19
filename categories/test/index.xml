@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on YAN的札记</title>
+    <link>https://yannotes.cn/categories/test/</link>
+    <description>Recent content in Test on YAN的札记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sat, 19 Jan 2019 20:13:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://yannotes.cn/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test github</title>
+      <link>https://yannotes.cn/post/test/</link>
+      <pubDate>Sat, 19 Jan 2019 20:13:23 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/post/test/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
