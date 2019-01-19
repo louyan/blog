@@ -24,16 +24,6 @@
   </url>
   
   <url>
-<<<<<<< HEAD
-=======
-    <loc>https://yannotes.cn/post/how-new-hugo-blog/</loc>
-    <lastmod>2019-01-19T04:40:54+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <loc>https://yannotes.cn/resume/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -95,22 +85,14 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://yannotes.cn/tags/hugo/</loc>
-=======
-    <loc>https://yannotes.cn/categories/hugo/</loc>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://yannotes.cn/categories/hugo/</loc>
-=======
-    <loc>https://yannotes.cn/tags/hugo/</loc>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -145,33 +127,21 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://yannotes.cn/tags/theme/</loc>
-=======
-    <loc>https://yannotes.cn/categories/theme/</loc>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://yannotes.cn/categories/theme/</loc>
-=======
-    <loc>https://yannotes.cn/archives/theme/</loc>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>https://yannotes.cn/archives/theme/</loc>
-=======
-    <loc>https://yannotes.cn/tags/theme/</loc>
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -184,14 +154,4 @@
     <priority>0</priority>
   </url>
   
-<<<<<<< HEAD
-=======
-  <url>
-    <loc>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-19T04:40:54+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
 </urlset>
