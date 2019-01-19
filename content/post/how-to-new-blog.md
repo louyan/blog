@@ -99,18 +99,16 @@ GitHub通过其[GitHub Pages服务](https://help.github.com/articles/what-is-git
 
 - **step 1**
 
-  把public 目录添加到 subtree:
+把public 目录添加到 subtree:
 
-  > ```github
-  > git add public 
-  > git commit -m "Initial dist subtree commit"
-  > ```
+> git add public 
+> git commit -m "Initial dist subtree commit"
 
 - **step 2**
 
-  用 subtree 将 dist 目录推送到 gh-pages 分支:
+用 subtree 将 dist 目录推送到 gh-pages 分支:
 
-  > git subtree push -P public origin gh-pages
+> git subtree push -P public origin gh-pages
 
 
 
