@@ -28,5 +28,17 @@
       <description></description>
     </item>
     
+<<<<<<< HEAD
+=======
+    <item>
+      <title>博客</title>
+      <link>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 19 Jan 2019 04:40:54 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+>>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
   </channel>
 </rss>

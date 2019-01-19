@@ -143,10 +143,17 @@ git push origin master
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # 把自定义域名加入CNAME中，添加 CNAME 文件到你的存储库中.
+<<<<<<< HEAD
 echo yannotes.cn > public/CNAME
 
 # Add changes to git.
 git add -f public
+=======
+echo "yannotes.cn" >> CNAME
+
+# Add changes to git.
+git add public
+>>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
 
 # Commit changes.
 
