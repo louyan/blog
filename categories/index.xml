@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on YAN的札记</title>
+    <link>https://yannotes.cn/categories/</link>
+    <description>Recent content in Categories on YAN的札记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    
+	<atom:link href="https://yannotes.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fun</title>
+      <link>https://yannotes.cn/categories/fun/</link>
+      <pubDate>Sat, 19 Jan 2019 20:13:23 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/categories/fun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://yannotes.cn/categories/hugo/</link>
+      <pubDate>Sat, 19 Jan 2019 20:13:23 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://yannotes.cn/categories/test/</link>
+      <pubDate>Sat, 19 Jan 2019 20:13:23 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theme</title>
+      <link>https://yannotes.cn/categories/theme/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/categories/theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>博客</title>
+      <link>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 19 Jan 2019 04:40:54 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
