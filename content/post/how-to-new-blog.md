@@ -146,7 +146,7 @@ hugo # if using a theme, replace by `hugo -t <yourtheme>`
 echo "yannotes.cn" >> CNAME
 
 # Add changes to git.
-git add public
+git add -f public
 
 # Commit changes.
 

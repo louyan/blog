@@ -29,7 +29,7 @@ echo "yannotes.cn" >> CNAME
 # Go To Public folder
 # cd public
 # Add changes to git.
-git add public
+git add -f public
 
 # Commit changes.
 
