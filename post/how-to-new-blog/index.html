@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Hugo搭建博客，用gh-pages分支部署页面</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  
+  
+
+  
+
+  
+  <meta name="author" content="lou&#39;yan">
+  <meta name="description" content="将Hugo部署为GitHub Pages项目或个人/组织站点，并使用简单的shell脚本自动完成整个过程。
+GitHub通过其GitHub Pages服务直接从GitHub存储库为个人，组织或项目页面提供基于SSL的免费和快速静态托管。
+关于详细的hugo建博客过程，前往我在掘金的文章：Hugo -最好用的静态网站生成器
+本文的重点在源码和hugo后生成的页面分开部署，便于管理等
+">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@twitter_username">
+    <meta name="twitter:title" content="Hugo搭建博客，用gh-pages分支部署页面">
+    <meta name="twitter:description" content="将Hugo部署为GitHub Pages项目或个人/组织站点，并使用简单的shell脚本自动完成整个过程。
+GitHub通过其GitHub Pages服务直接从GitHub存储库为个人，组织或项目页面提供基于SSL的免费和快速静态托管。
+关于详细的hugo建博客过程，前往我在掘金的文章：Hugo -最好用的静态网站生成器
+本文的重点在源码和hugo后生成的页面分开部署，便于管理等
+">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hugo搭建博客，用gh-pages分支部署页面">
+  <meta property="og:description" content="将Hugo部署为GitHub Pages项目或个人/组织站点，并使用简单的shell脚本自动完成整个过程。
+GitHub通过其GitHub Pages服务直接从GitHub存储库为个人，组织或项目页面提供基于SSL的免费和快速静态托管。
+关于详细的hugo建博客过程，前往我在掘金的文章：Hugo -最好用的静态网站生成器
+本文的重点在源码和hugo后生成的页面分开部署，便于管理等
+">
+  <meta property="og:url" content="https://yannotes.cn/post/how-to-new-blog/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.53">
+
+
+<link rel="canonical" href="https://yannotes.cn/post/how-to-new-blog/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="YAN的札记">
+<meta name="msapplication-tooltip" content="YAN的札记">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://yannotes.cn/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yannotes.cn/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yannotes.cn/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://yannotes.cn/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://yannotes.cn/icons/icon-152x152.png">
+<link rel="manifest" href="https://yannotes.cn/manifest.json">
+
+
+<link rel="preload" href="https://yannotes.cn/styles/main.min.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://yannotes.cn/images/avatar.png" as="image">
+<link rel="preload" href="https://yannotes.cn/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://yannotes.cn/styles/main.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://yannotes.cn/images/avatar.png" alt="Avatar">
+  
+  <h2 class="title">YAN的札记</h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://yannotes.cn/">首页</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/archives">归档</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/tags/">标签</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/about/">关于</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://yannotes.cn/links/">友链</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:liuyancj@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/louyan" title="GitHub" aria-label="GitHub">
+            <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//twitter.com/twitter_username" title="Twitter" aria-label="Twitter">
+            <span class="icon icon-twitter" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="https://yannotes.cn/images/qrcode.jpg" title="Wechat" aria-label="Wechat">
+            <span class="icon icon-wechat" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin" aria-label="Linkedin">
+            <span class="icon icon-linkedin" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Hugo搭建博客，用gh-pages分支部署页面</h1>
+      <p class="post-meta">@lou&#39;yan · Jan 19, 2019 · 2 min read</p>
+    </header>
+    <article class="post-content"><p>将Hugo部署为GitHub Pages项目或个人/组织站点，并使用简单的shell脚本自动完成整个过程。</p>
+
+<p>GitHub通过其<a href="https://help.github.com/articles/what-is-github-pages/">GitHub Pages服务</a>直接从GitHub存储库为个人，组织或项目页面提供基于SSL的免费和快速静态托管。</p>
+
+<p>关于详细的hugo建博客过程，前往我在掘金的文章：<a href="https://juejin.im/post/5c02c03af265da616a4766e5">Hugo -最好用的静态网站生成器</a></p>
+
+<p>本文的重点在源码和hugo后生成的页面分开部署，便于管理等</p>
+
+<h2 id="场景">场景：</h2>
+
+<p>在搭建博客过程中有这样的需求，想把hugo后生产的public里的文件分别管理，部署在一个master分支，看着不爽(于是折腾，强迫症犯了 ：呲牙&gt;)。经过一番折腾，发现可以用subtree解决。</p>
+
+<blockquote>
+<p>git subtree</p>
+</blockquote>
+
+<p>相信大部分人和我一样，只会git add ，push，pull之类的，对subtree概念模糊，很少用到。</p>
+
+<p>把一个项目作为子项目，在多个项目中共享&amp;维护。</p>
+
+<p><strong>栗子</strong>：</p>
+
+<p>假设你有一个在线商城项目 <code>Shop</code>，这个项目下有个订单模块 order，这个 <code>order</code>模块很通用，你在下一个团购系统 <code>Groupon</code>，也要用到这个 order 模块，最简单的方式就是把整个 order 模块 copy 过来。</p>
+
+<p>然而，这种 copy 方式，会很难维护：order 模块修改了一个Bug，然后又要复制更新到所有用了 order 模块的项目里。</p>
+
+<p>这时就需要 <code>git subtree</code>来管理这个 order 模块了：把 order 模块单独作为一个 git 仓库，在需要用到 order 模块的项目，通过使用 <code>git subtree</code>把 <code>order</code>模块当作一个 git 项目来引入，这就解决了 <code>order</code> 模块的共享和维护问题。</p>
+
+<h2 id="相关命令">相关命令</h2>
+
+<p><code>git subtree --help</code> 可以查看 <code>git subtree</code> 命令的帮助文档。</p>
+
+<p><code>git subtree</code> 命令中，都会用到一个参数 <code>--prefix=&lt;prefix&gt;</code>，可以简写成 <code>-P &lt;prefix&gt;</code>，本文的命令都是这样使用的。</p>
+
+<ul>
+<li>添加远程仓库：</li>
+</ul>
+
+<p><strong>git remote add origin <a href="https://github.com/louyan/blog.git">https://github.com/louyan/blog.git</a></strong></p>
+
+<h3 id="git-subtree-add-添加项目作为子树">git subtree add 添加项目作为子树</h3>
+
+<blockquote>
+<p>git subtree add -P &lt;子树名&gt; &lt;子仓库地址&gt; &lt;分支&gt;</p>
+</blockquote>
+
+<p>执行以上命令后，项目下就会新创建一个名为<code>&lt;子树名&gt;</code>的目录。</p>
+
+<p>如果提前使用<code>git remote add &lt;子仓库名&gt; &lt;子仓库地址&gt;</code>添加了子项目的远程仓库地址（建议按此方式，下文都基于此），那么也可以这样：</p>
+
+<blockquote>
+<p>git subtree add -P &lt;子树名&gt; &lt;子仓库名&gt; &lt;分支&gt;</p>
+</blockquote>
+
+<p>以上命令可以多加一个 <code>--squash</code>参数：</p>
+
+<blockquote>
+<p>git subtree add -P &lt;子树名&gt; &lt;子仓库名&gt; &lt;分支&gt; &ndash;squash</p>
+</blockquote>
+
+<p><code>--squash</code> 参数含义是：把 <code>subtree</code> 的改动合并成一次<code>commit</code>，这样就不用拉取子项目完整的历史记录。</p>
+
+<h3 id="git-subtree-pull-从子仓库拉取子树更新">git subtree pull 从子仓库拉取子树更新</h3>
+
+<p>先 <code>fetch</code>：</p>
+
+<blockquote>
+<p>git fetch &lt;子仓库名&gt; &lt;分支&gt;</p>
+</blockquote>
+
+<p>后 <code>pull</code>：</p>
+
+<blockquote>
+<p>git subtree pull -P &lt;子树名&gt; &lt;子仓库名&gt; &lt;分支&gt;</p>
+</blockquote>
+
+<p>以上命令也可以多加一个 <code>--squash</code>参数：</p>
+
+<blockquote>
+<p>git subtree pull -P &lt;子树名&gt; &lt;子仓库名&gt; &lt;分支&gt; &ndash;squash</p>
+</blockquote>
+
+<p><code>--squash</code>参数含义同上。</p>
+
+<h3 id="git-subtree-push-推送子树更新到子仓库">git subtree push 推送子树更新到子仓库</h3>
+
+<blockquote>
+<p>git subtree push -P &lt;子树名&gt; &lt;子仓库名&gt; &lt;分支&gt;</p>
+</blockquote>
+
+<h2 id="部署">部署</h2>
+
+<p>把源码和文章更新到master分支上。</p>
+
+<p><strong>Push Hugo content</strong></p>
+
+<blockquote>
+<p>git add -A
+git commit -m &ldquo;$msg&rdquo;
+git push origin master</p>
+</blockquote>
+
+<p>把public页面内容更新到gh-pages分支上，public作为子树推送。</p>
+
+<ul>
+<li><strong>step 1</strong></li>
+</ul>
+
+<p>把public 目录添加到 subtree:</p>
+
+<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-github" data-lang="github">  &gt; git add public 
+  &gt; git commit -m <span style="color:#e6db74">&#34;Initial dist subtree commit&#34;</span>
+  &gt; <span style="color:#e6db74">```</span>
+
+- **step <span style="color:#ae81ff">2</span>**
+
+  用 subtree 将 dist 目录推送到 gh-pages 分支:
+
+  &gt; git subtree push -P public origin gh-pages
+
+<span style="color:#75715e">### 自动化部署</span>
+
+完整过程：deploy.sh
+
+<span style="color:#e6db74">```</span>github
+<span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>echo -e <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+
+msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#75715e"># Push Hugo content</span> 
+git add -A
+git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+git push origin master
+
+<span style="color:#75715e"># git remote add origin https://github.com/louyan/blog.git</span>
+<span style="color:#75715e"># 如果首次运行，需要先add一下，</span>
+<span style="color:#75715e"># git subtree add -P public origin gh-pages --squash</span>
+<span style="color:#75715e"># git subtree pull -P public origin gh-pages</span>
+<span style="color:#75715e"># git subtree push -P public origin gh-pages</span>
+
+<span style="color:#75715e"># 如果要删除远程分支</span>
+<span style="color:#75715e"># git push origin --delete gh-pages</span>
+
+<span style="color:#75715e"># Build the project.</span> 
+hugo <span style="color:#75715e"># if using a theme, replace by `hugo -t &lt;yourtheme&gt;`</span>
+
+<span style="color:#75715e"># 把自定义域名加入CNAME中，添加 CNAME 文件到你的存储库中.</span>
+echo <span style="color:#e6db74">&#34;yannotes.cn&#34;</span> &gt;&gt; CNAME
+
+<span style="color:#75715e"># Add changes to git.</span>
+git add -f public
+
+<span style="color:#75715e"># Commit changes.</span>
+
+git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Push source and build repos.</span>
+git subtree push -P public origin gh-pages</code></pre></div></blockquote>
+
+<p>新建文章：<strong>hugo new post/XXXX.md</strong>，</p>
+
+<p>本地浏览：<strong>hugo server  -D</strong> ,</p>
+
+<p>(*<strong>注意</strong>：正式发布时，draft: false，为true时是草稿，不会发布。)</p>
+
+<p>确认无误后，然后cmd中执行脚本<strong>deploy.sh  &ldquo; commit msg&rdquo;</strong></p>
+
+<p>commit msg：替换为你需要写的提交信息，默认为日期信息</p>
+
+<p>~ End</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://yannotes.cn/tags/hugo"><span class="tag">Hugo</span></a></li>
+        
+          <li><a href="https://yannotes.cn/tags/subtree"><span class="tag">Subtree</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 YAN的札记</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://yannotes.cn/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
