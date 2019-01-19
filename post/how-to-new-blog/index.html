@@ -342,26 +342,24 @@ git push origin master</p>
 <p>把public 目录添加到 subtree:</p>
 
 <blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-github" data-lang="github">  &gt; git add public 
-  &gt; git commit -m <span style="color:#e6db74">&#34;Initial dist subtree commit&#34;</span>
-  &gt; <span style="color:#e6db74">```</span>
+<p>git add public
+git commit -m &ldquo;Initial dist subtree commit&rdquo;</p>
+</blockquote>
 
-- **step <span style="color:#ae81ff">2</span>**
+<ul>
+<li><strong>step 2</strong></li>
+</ul>
 
-  用 subtree 将 dist 目录推送到 gh-pages 分支:
+<p>用 subtree 将 dist 目录推送到 gh-pages 分支:</p>
 
-  &gt; git subtree push -P public origin gh-pages
+<blockquote>
+<p>git subtree push -P public origin gh-pages</p>
+</blockquote>
 
+<h3 id="自动化部署">自动化部署</h3>
 
-
-<span style="color:#75715e">### 自动化部署</span>
-
-完整过程：deploy.sh
-
-
-
-<span style="color:#e6db74">```</span>github
-<span style="color:#75715e">#!/bin/bash
+<p>完整过程：deploy.sh</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-github" data-lang="github"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>echo -e <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
 
 msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
@@ -400,8 +398,7 @@ git add -f public
 git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
 
 <span style="color:#75715e"># Push source and build repos.</span>
-git subtree push -P public origin gh-pages</code></pre></div></blockquote>
-
+git subtree push -P public origin gh-pages</code></pre></div>
 <p>新建文章：<strong>hugo new post/XXXX.md</strong>，</p>
 
 <p>本地浏览：<strong>hugo server  -D</strong> ,</p>
