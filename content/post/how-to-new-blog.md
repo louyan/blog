@@ -112,9 +112,13 @@ GitHub通过其[GitHub Pages服务](https://help.github.com/articles/what-is-git
 
   > git subtree push -P public origin gh-pages
 
+
+
 ### 自动化部署
 
 完整过程：deploy.sh
+
+
 
 ```github
 #!/bin/bash
@@ -130,6 +134,9 @@ git add -A
 git commit -m "$msg"
 git push origin master
 
+# 清空本地缓存
+# git rm --cached $(git ls-files)
+
 # git remote add origin https://github.com/louyan/blog.git
 # 如果首次运行，需要先add一下，
 # git subtree add -P public origin gh-pages --squash
@@ -143,17 +150,10 @@ git push origin master
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # 把自定义域名加入CNAME中，添加 CNAME 文件到你的存储库中.
-<<<<<<< HEAD
 echo yannotes.cn > public/CNAME
 
 # Add changes to git.
 git add -f public
-=======
-echo "yannotes.cn" >> CNAME
-
-# Add changes to git.
-git add public
->>>>>>> 534c5d7acc4665efcc743c7e215e7638e511303d
 
 # Commit changes.
 
