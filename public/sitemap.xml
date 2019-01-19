@@ -17,8 +17,8 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/post/test/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
+    <loc>https://yannotes.cn/post/how-to-new-blog/</loc>
+    <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -78,13 +78,6 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/categories/fun/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yannotes.cn/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -99,15 +92,15 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/tags/hugo/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
+    <loc>https://yannotes.cn/categories/hugo/</loc>
+    <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yannotes.cn/categories/hugo/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
+    <loc>https://yannotes.cn/tags/hugo/</loc>
+    <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -121,7 +114,14 @@
   
   <url>
     <loc>https://yannotes.cn/post/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
+    <lastmod>2019-01-19T21:40:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yannotes.cn/tags/subtree/</loc>
+    <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -134,15 +134,8 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/tags/test/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yannotes.cn/categories/test/</loc>
-    <lastmod>2019-01-19T20:13:23+08:00</lastmod>
+    <loc>https://yannotes.cn/categories/theme/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -156,13 +149,6 @@
   
   <url>
     <loc>https://yannotes.cn/tags/theme/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yannotes.cn/categories/theme/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
