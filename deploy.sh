@@ -11,13 +11,20 @@ git add -A
 git commit -m "$msg"
 git push origin master
 
-git remote add origin https://github.com/louyan/blog.git
-git subtree add -P public origin gh-pages --squash
+# git remote add origin https://github.com/louyan/blog.git
+# 如果首次运行，需要先add一下，
+# git subtree add -P public origin gh-pages --squash
 # git subtree pull -P public origin gh-pages
 # git subtree push -P public origin gh-pages
 
+# 如果要删除远程分支
+# git push origin --delete gh-pages
+
 # Build the project. 
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
+
+# 把自定义域名加入CNAME中,添加 CNAME 文件到你的存储库中.
+echo "yannotes.cn" >> CNAME
 
 # Go To Public folder
 # cd public
