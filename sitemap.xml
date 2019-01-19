@@ -85,14 +85,14 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/tags/hugo/</loc>
+    <loc>https://yannotes.cn/categories/hugo/</loc>
     <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yannotes.cn/categories/hugo/</loc>
+    <loc>https://yannotes.cn/tags/hugo/</loc>
     <lastmod>2019-01-19T21:40:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
@@ -127,13 +127,6 @@
   </url>
   
   <url>
-    <loc>https://yannotes.cn/tags/theme/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yannotes.cn/categories/theme/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -142,6 +135,13 @@
   
   <url>
     <loc>https://yannotes.cn/archives/theme/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yannotes.cn/tags/theme/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
