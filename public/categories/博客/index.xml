@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on YAN的札记</title>
+    <link>https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on YAN的札记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sat, 19 Jan 2019 04:40:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://yannotes.cn/categories/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo搭建静态个人博客</title>
+      <link>https://yannotes.cn/post/how-new-hugo-blog/</link>
+      <pubDate>Sat, 19 Jan 2019 04:40:54 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/post/how-new-hugo-blog/</guid>
+      <description>&lt;p&gt;使用Hugo搭建静态个人博客,源码和网站内容分开。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

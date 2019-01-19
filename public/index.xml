@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YAN的札记</title>
+    <link>https://yannotes.cn/</link>
+    <description>Recent content on YAN的札记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 09 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yannotes.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>https://yannotes.cn/about/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/about/</guid>
+      <description> 坐标天府之都成都
+ 开源是一种信仰，代表开放、创新、自由和共享
+ 简介  Golang web工程师一枚 &amp;amp; Pythoner
+  对新鲜事物永远好奇
+ 热爱阅读、旅行、摄影、吉他、户外运动
+ 在IT技术领域永远是个菜鸟，学无止境
+  关于YAN的世界  记录所学，记录生活，努力修行，成就更好的自己
+ 大事纪  2019.01 Hello Hugo！ 2017.7 Welcome my blog！
+  使用的元素  主题：Hugo Nuo 工具：Typora  GitHub：https://github.com/louyan </description>
+    </item>
+    
+    <item>
+      <title>友链</title>
+      <link>https://yannotes.cn/links/</link>
+      <pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/links/</guid>
+      <description>Ritchie and his friends.</description>
+    </item>
+    
+    <item>
+      <title>Test github</title>
+      <link>https://yannotes.cn/post/test/</link>
+      <pubDate>Sat, 19 Jan 2019 20:13:23 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/post/test/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Hugo搭建静态个人博客</title>
+      <link>https://yannotes.cn/post/how-new-hugo-blog/</link>
+      <pubDate>Sat, 19 Jan 2019 04:40:54 +0800</pubDate>
+      
+      <guid>https://yannotes.cn/post/how-new-hugo-blog/</guid>
+      <description>&lt;p&gt;使用Hugo搭建静态个人博客,源码和网站内容分开。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>简历</title>
+      <link>https://yannotes.cn/resume/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/resume/</guid>
+      <description>This is my resume.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 主题 Nuo 文章样式预览</title>
+      <link>https://yannotes.cn/post/hugo-nuo-post-preview/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/post/hugo-nuo-post-preview/</guid>
+      <description>&lt;p&gt;这篇文章集中说明本人博客主题所支持的 Markdown 语法和 Hugo Shortcodes 插件，你也可以在这里预览到他们的样子。如果你不喜欢某些部分的样式，可以去修改 &lt;code&gt;content.scss&lt;/code&gt; 和 &lt;code&gt;shortcodes.scss&lt;/code&gt; 这两个文件。预告一下，我所用的这个名为 &lt;code&gt;Nuo&lt;/code&gt; 的 &lt;code&gt;Hugo&lt;/code&gt; 也将于近期发布，敬请期待。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://yannotes.cn/post/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://yannotes.cn/post/book/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yannotes.cn/post/book/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>
